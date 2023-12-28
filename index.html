@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- MK Test -->
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.21.1/dist/bootstrap-table.min.css">
+  <link href="https://unpkg.com/bootstrap-table@1.22.1/dist/extensions/reorder-rows/bootstrap-table-reorder-rows.css"
+    rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="container-fluid">
+    <h3>Air Quality API</h3>
+    <div class="row">
+    <div class="col">
+
+    <form action="index.php?method=AirQuality" method="post">
+        Latitude: <input type="text" class="form-control" value="55.3286193" name="latitude"><br>
+        Longitude: <input type="text" name="longitude"  class="form-control" value="-131.5937879" ><br>
+        <input type="submit">
+        </form>
+    </div>
+</div>
+        <h3>Solar API</h3>
+        <div class="row">
+            <div class="col">
+        <form action="index.php?method=solar" method="post">
+            Latitude: <input type="text" name="latitude" class="form-control" value="40.6955389"><br>
+            Longitude: <input type="text" name="longitude" class="form-control" value="-73.78149"><br>
+            <input type="submit">
+            </form>
+        </div>
+    </div>
+  </div>
+  <!-- <script >
+  function apiCall(api) {
+    $.ajax({
+      url: "index.php?method="+api,
+      type: "POST",
+      dataType: "json",
+      processData: false, // important
+      contentType: false, // important
+      data: null,
+      success: function (resp) {
+        //alert(resp);
+        RefreshTables(0);
+        $('#mdlImportDelivery').modal('hide');
+        debugger;
+      },
+      error: function (xhr, status, error) {
+        debugger;
+        console.log(error);
+        alert(error);
+      },
+    });
+  }
+</script> -->
+</body>
+</html>

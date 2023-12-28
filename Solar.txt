@@ -1,0 +1,2 @@
+maxArrayPanelsCount,panelCapacityWatts,maxArrayAreaMeters2,maxSunshineHoursPerYear,carbonOffsetFactorKgPerMwh,panelsCount,yearlyEnergyDcKwhso2
+
