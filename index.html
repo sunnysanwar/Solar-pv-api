@@ -24,7 +24,7 @@
     <div class="row">
     <div class="col">
 
-    <form action="index.php?method=AirQuality" method="post">
+    <form action="main.php?method=AirQuality" method="post">
         Latitude: <input type="text" class="form-control" value="55.3286193" name="latitude"><br>
         Longitude: <input type="text" name="longitude"  class="form-control" value="-131.5937879" ><br>
         <input type="submit">
@@ -34,9 +34,9 @@
         <h3>Solar API</h3>
         <div class="row">
             <div class="col">
-        <form action="index.php?method=solar" method="post">
-            Latitude: <input type="text" name="latitude" class="form-control" value="40.6955389"><br>
-            Longitude: <input type="text" name="longitude" class="form-control" value="-73.78149"><br>
+        <form action="main.php?method=solar" method="post">
+            Latitude: <input type="text" name="latitude" class="form-control" value="37.4449739"><br>
+            Longitude: <input type="text" name="longitude" class="form-control" value="-122.13914659"><br>
             <input type="submit">
             </form>
         </div>
@@ -45,7 +45,7 @@
   <!-- <script >
   function apiCall(api) {
     $.ajax({
-      url: "index.php?method="+api,
+      url: "main.php?method="+api,
       type: "POST",
       dataType: "json",
       processData: false, // important

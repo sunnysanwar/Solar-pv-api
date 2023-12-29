@@ -1,5 +1,5 @@
 <?php
-require_once('GoogleAPI.php');
+require_once('googleapi.php');
 function GenerateCSVlineFromArray($array)
 {
     $line = "";
