@@ -41,18 +41,7 @@ var AddressSearch = {
             //add the new lat and lng input field
             addressElement.insertAdjacentHTML('afterend', latInput);
             addressElement.insertAdjacentHTML('afterend', longInput);
-
-            // if url contains 'building' then continue else return
-            let currentUrl = window.location.href;
-
-            if (currentUrl.includes('profile/building') || currentUrl.includes('admin/building/create')) {
-                // show building zipcodes in the muted zipcodes text field
-                let addressZipcode = center.place_name?.split(",")[2]?.replace( /^\D+/g, '') ?? '';
-                document.getElementById('building-modeling-fields').querySelector("input[name='zipcode']").value = addressZipcode;
-
-                let resData = await AddressSearch.getAttomAndBuildingModelingApiData(center);
-                showApiResponseInModal(resData);
-            }          
+       
         }
 
         function displayAddressSearchResult() {
@@ -111,11 +100,3 @@ var AddressSearch = {
         };
     },
 };
-
-function showResponseMessage(type, message) {
-    swal.fire({
-        icon: type,
-        text: message,
-    });
-}
-
