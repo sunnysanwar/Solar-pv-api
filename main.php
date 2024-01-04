@@ -130,4 +130,9 @@ fclose($myfile);
 // }
 // fclose($fp);
 
-echo $csv;//GenerateCSVlineFromArray($result);
+// echo $csv;//GenerateCSVlineFromArray($result);
+$csvData = str_getcsv($csv, "\n"); 
+$csvArray = array_map('str_getcsv', $csvData);
+if($csvData){
+    include 'output.html';
+}

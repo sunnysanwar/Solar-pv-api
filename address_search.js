@@ -73,10 +73,8 @@ var AddressSearch = {
         let fetchAddressTimeout;
         let fetchAddressController;
 
-        const mapToken = "pk.eyJ1Ijoic3VubnlzYW53YXIiLCJhIjoiY2wwNjV5N3kzMDQwbTNib2NhMnd6NGg2dCJ9.501q9aEzAkIe4RzQm-IzQg";
-        
         const fetchAddress = (value) => {
-            const url = `https://api.mapbox.com/geocoding/v5/mapbox.places/${value}.json?country=US&access_token=${mapToken}`;
+            const url = `fetchGeocodeAddresses.php?value=${encodeURIComponent(value)}`;
 
             if (fetchAddressController) fetchAddressController.abort();
             clearTimeout(fetchAddressTimeout);
@@ -93,7 +91,6 @@ var AddressSearch = {
                     .then((res) => res.json())
                     .then((data) => {
                         searchAddressResults = data.features;
-                        console.log(searchAddressResults);
                         displayAddressSearchResult();
                     });
             }, 200);
