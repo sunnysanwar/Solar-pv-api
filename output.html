@@ -1,0 +1,46 @@
+<!-- table.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV Table</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div class="container mt-4">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <?php
+                    // Assuming the first row is the header
+                    $headers = str_getcsv($csvData[0]);
+                    foreach ($headers as $header) {
+                        echo '<th>' . htmlspecialchars($header) . '</th>';
+                    }
+                    ?>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Start from the second row (index 1) to avoid repeating the header
+                for ($i = 1; $i < count($csvData); $i++) {
+                    $row = str_getcsv($csvData[$i]);
+                    echo '<tr>';
+                    foreach ($row as $cell) {
+                        echo '<td>' . htmlspecialchars($cell) . '</td>';
+                    }
+                    echo '</tr>';
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
