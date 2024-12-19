@@ -50,7 +50,7 @@ function getSolarApiData($res)
 {
     $apiData = array();
     if ($res != null) {
-        array_push($apiData,['carbonOffsetFactorKgPerMwh',$res->solarPotential->carbonOffsetFactorKgPerMwh]);
+        array_push($apiData,['maxArrayPanelsCount',$res->solarPotential->maxArrayPanelsCount]);
         array_push($apiData, ['panelCapacityWatts',$res->solarPotential->panelCapacityWatts]);
         array_push($apiData, ['maxArrayAreaMeters2',$res->solarPotential->maxArrayAreaMeters2]);
         array_push($apiData, ['maxSunshineHoursPerYear',$res->solarPotential->maxSunshineHoursPerYear]);
@@ -93,7 +93,7 @@ if(count($myLocations)==0)
 if ($apiToProcess == 'AirQuality') {
     $csv = 'so2,no2,co,o3,pm25,pm10';
 } else {
-    $csv = 'maxArrayPanelsCount,panelCapacityWatts,maxArrayAreaMeters2,maxSunshineHoursPerYear,carbonOffsetFactorKgPerMwh,panelsCount,yearlyEnergyDcKwhso2';
+    $csv = 'maxArrayPanelsCount,panelCapacityWatts,maxArrayAreaMeters2,maxSunshineHoursPerYear,carbonOffsetFactorKgPerMwh,yearlyEnergyDcKwhso2,panelsCount';
 }
 $csv = $csv . "\r\n";
 
